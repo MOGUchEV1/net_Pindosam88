@@ -1,5 +1,7 @@
+# напиши здесь код для второго экрана приложения
 from PyQt5.QtCore import Qt 
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout, QLineEdit
+from instr import *
 from final_win import *
 class Second_win(QWidget):
     def __init__(self):
@@ -14,21 +16,21 @@ class Second_win(QWidget):
         self.resize(400,400)
     
     def initUI(self):
-        self.FIO_l =QLabel('Введите Ф.И.О')
+        self.FIO_l =QLabel(txt_name)
         self.FiO_ld=QLineEdit()
-        self.age_l=QLabel('Введите возраст')
+        self.age_l=QLabel(txt_age)
         self.age_ld=QLineEdit()
         
-        self.rec1=QLabel('Ляг')
-        self.rec2=QLabel('Присядай')
-        self.rec3=QLabel('Отдыхай')
+        self.rec1=QLabel(txt_test1)
+        self.rec2=QLabel(txt_test2)
+        self.rec3=QLabel(txt_test3)
         self.res1=QLineEdit()
         self.res2=QLineEdit()
         self.res3=QLineEdit()
         self.but1=QPushButton('Жми как готов')
         self.but2=QPushButton('Жми как готов')
         self.but3=QPushButton('Жми как готов')
-        self.next=QPushButton('Показать на сколько ты стар')
+        self.next=QPushButton(txt_sendresults)
         
         
         
