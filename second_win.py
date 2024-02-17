@@ -1,8 +1,11 @@
 # напиши здесь код для второго экрана приложения
-from PyQt5.QtCore import Qt 
+from PyQt5.QtCore import Qt, QCoreApplication
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout, QLineEdit
 from instr import *
 from final_win import *
+from PyQt5.QtMultimedia import QSound
+import sys 
+
 class Second_win(QWidget):
     def __init__(self):
         super().__init__()
@@ -27,9 +30,9 @@ class Second_win(QWidget):
         self.res1=QLineEdit("20")
         self.res2=QLineEdit("40")
         self.res3=QLineEdit("30")
-        self.but1=QPushButton('Жми как готов')
-        self.but2=QPushButton('Жми как готов')
-        self.but3=QPushButton('Жми как готов')
+        self.but1=QPushButton('Запуск таймера')
+        self.but2=QPushButton('Запуск таймера')
+        self.but3=QPushButton('Запуск таймера')
         self.next=QPushButton(txt_sendresults)
         
         
@@ -40,14 +43,14 @@ class Second_win(QWidget):
         self.lay.addWidget(self.age_l)
         self.lay.addWidget(self.age_ld)
         self.lay.addWidget(self.rec1)
-        self.lay.addWidget(self.res1)
         self.lay.addWidget(self.but1)
-        self.lay.addWidget(self.rec2)
-        self.lay.addWidget(self.res2)
+        self.lay.addWidget(self.res1)
+        self.lay.addWidget(self.rec2) 
         self.lay.addWidget(self.but2)
+        self.lay.addWidget(self.res2)
         self.lay.addWidget(self.rec3)
-        self.lay.addWidget(self.res3)
         self.lay.addWidget(self.but3)
+        self.lay.addWidget(self.res3)
         self.lay.addWidget(self.next)
         self.setLayout(self.lay)
         
