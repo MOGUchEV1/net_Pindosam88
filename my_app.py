@@ -1,8 +1,9 @@
 # напиши здесь код основного приложения и первого экрана
-from PyQt5.QtCore import Qt 
+from PyQt5.QtCore import Qt, QTimer, QTime 
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout
 from instr import *
 from second_win import *
+        
 class MainWin(QWidget):
     def __init__(self):
         super().__init__()
@@ -30,7 +31,7 @@ class MainWin(QWidget):
 
     def to_second(self):
         self.hide()
-        self.next_screen= Second_win()
+        self.next_screen= Second_win() 
 app=QApplication([])
 my_r=MainWin()        
 app.exec()

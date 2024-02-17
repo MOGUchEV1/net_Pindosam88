@@ -19,14 +19,14 @@ class Second_win(QWidget):
         self.FIO_l =QLabel(txt_name)
         self.FiO_ld=QLineEdit()
         self.age_l=QLabel(txt_age)
-        self.age_ld=QLineEdit()
+        self.age_ld=QLineEdit("10")
         
         self.rec1=QLabel(txt_test1)
         self.rec2=QLabel(txt_test2)
         self.rec3=QLabel(txt_test3)
-        self.res1=QLineEdit()
-        self.res2=QLineEdit()
-        self.res3=QLineEdit()
+        self.res1=QLineEdit("20")
+        self.res2=QLineEdit("40")
+        self.res3=QLineEdit("30")
         self.but1=QPushButton('Жми как готов')
         self.but2=QPushButton('Жми как готов')
         self.but3=QPushButton('Жми как готов')
@@ -57,4 +57,12 @@ class Second_win(QWidget):
 
     def to_third(self):
         self.hide()
-        self.next_screen= final_win()
+        self.exp=Rezilt(self.age_ld.text(), self.res1.text(), self.res2.text(), self.res3.text())
+        self.next_screen= final_win(self.exp)
+
+class Rezilt():
+    def __init__(self, age, test1, test2, test3):
+        self.age=int(age)
+        self.t1=int(test1)
+        self.t2=int(test2)
+        self.t3=int(test3)  
